@@ -11,33 +11,38 @@ public class MGeneros {
 
     //Atributos
     @Id
-    @Column(name="idGenero", length = 15, nullable = false)
-    Integer idGenero;
-    @Column (name="nombreGenero", length = 100, nullable = false)
-    String nombreGenero;
+    @Column(name="idgenero", length = 15, nullable = false)
+    Integer idgenero;
+    @Column (name="nombregenero", length = 100, nullable = false)
+    String nombregenero;
+
+    //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
+
 
     //Constructores
     MGeneros(){}
 
-    public MGeneros(Integer idGenero, String nombreGenero) {
-        this.idGenero = idGenero;
-        this.nombreGenero = nombreGenero;
+    public MGeneros(Integer idgenero, String nombregenero) {
+        this.idgenero = idgenero;
+        this.nombregenero = nombregenero;
     }
 
     //Encapsulamiento
-    public Integer getIdGenero() {
-        return idGenero;
+    public Integer getIdgenero() {
+        return idgenero;
     }
 
-    public void setIdGenero(Integer idGenero) {
-        this.idGenero = idGenero;
+    public void setIdgenero(Integer idgenero) {
+        this.idgenero = idgenero;
     }
 
-    public String getNombreGenero() {
-        return nombreGenero;
+    public String getNombregenero() {
+        return nombregenero;
     }
 
-    public void setNombreGenero(String nombreGenero) {
-        this.nombreGenero = nombreGenero;
+    public void setNombregenero(String nombregenero) {
+        this.nombregenero = nombregenero;
     }
 }

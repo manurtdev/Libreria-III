@@ -9,44 +9,48 @@ import jakarta.persistence.Table;
 @Table(name="Ejemplares")
 public class MEjemplares {
     @Id
-    @Column(name="idEjemplares", length = 15, nullable = false)
-    Integer idEjemplares;
-    @Column(name="idLibro", length = 15, nullable = false)
-    Integer idLibro;
-    @Column(name="estadoEjemplar", length = 15, nullable = false)
-    String estadoEjemplar;
+    @Column(name="idejemplar", length = 15, nullable = false)
+    Integer idejemplar;
+    @Column(name="idlibro", length = 15, nullable = false)
+    Integer idlibro;
+    @Column(name="estadoejemplar", length = 15, nullable = false)
+    String estadoejemplar;
+
+    //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
 
     //Constructores
     MEjemplares(){}
 
-    public MEjemplares(String estadoEjemplar, Integer idEjemplares, Integer idLibro) {
-        this.estadoEjemplar = estadoEjemplar;
-        this.idEjemplares = idEjemplares;
-        this.idLibro = idLibro;
+    public MEjemplares(Integer idejemplar, Integer idlibro, String estadoejemplar) {
+        this.idejemplar = idejemplar;
+        this.idlibro = idlibro;
+        this.estadoejemplar = estadoejemplar;
     }
 
     //Encapsulamiento
-    public String getEstadoEjemplar() {
-        return estadoEjemplar;
+    public Integer getIdejemplar() {
+        return idejemplar;
     }
 
-    public void setEstadoEjemplar(String estadoEjemplar) {
-        this.estadoEjemplar = estadoEjemplar;
+    public void setIdejemplar(Integer idejemplar) {
+        this.idejemplar = idejemplar;
     }
 
-    public Integer getIdEjemplares() {
-        return idEjemplares;
+    public Integer getIdlibro() {
+        return idlibro;
     }
 
-    public void setIdEjemplares(Integer idEjemplares) {
-        this.idEjemplares = idEjemplares;
+    public void setIdlibro(Integer idlibro) {
+        this.idlibro = idlibro;
     }
 
-    public Integer getIdLibro() {
-        return idLibro;
+    public String getEstadoejemplar() {
+        return estadoejemplar;
     }
 
-    public void setIdLibro(Integer idLibro) {
-        this.idLibro = idLibro;
+    public void setEstadoejemplar(String estadoejemplar) {
+        this.estadoejemplar = estadoejemplar;
     }
 }

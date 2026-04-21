@@ -9,44 +9,48 @@ import jakarta.persistence.Table;
 @Table(name="Libros")
 public class MLibros {
     @Id
-    @Column(name="idLibro", length = 15, nullable = false)
-    Integer idLibro;
-    @Column (name="tituloLibro", length = 50, nullable = false)
-    String tituloLibro;
-    @Column(name="idGenero", length = 15, nullable = false)
-    Integer idGenero;
+    @Column(name="idlibro", length = 15, nullable = false)
+    Integer idlibro;
+    @Column (name="titulolibro", length = 50, nullable = false)
+    String titulolibro;
+    @Column(name="idgenero", length = 15, nullable = false)
+    Integer idgenero;
+
+    //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
+
 
     //Constructores
     MLibros(){}
-
-    public MLibros(Integer idGenero, Integer idLibro, String tituloLibro) {
-        this.idGenero = idGenero;
-        this.idLibro = idLibro;
-        this.tituloLibro = tituloLibro;
+    public MLibros(Integer idlibro, String titulolibro, Integer idgenero) {
+        this.idlibro = idlibro;
+        this.titulolibro = titulolibro;
+        this.idgenero = idgenero;
     }
 
     //Encapsulamiento
-    public Integer getIdGenero() {
-        return idGenero;
+    public Integer getIdlibro() {
+        return idlibro;
     }
 
-    public void setIdGenero(Integer idGenero) {
-        this.idGenero = idGenero;
+    public void setIdlibro(Integer idlibro) {
+        this.idlibro = idlibro;
     }
 
-    public Integer getIdLibro() {
-        return idLibro;
+    public String getTitulolibro() {
+        return titulolibro;
     }
 
-    public void setIdLibro(Integer idLibro) {
-        this.idLibro = idLibro;
+    public void setTitulolibro(String titulolibro) {
+        this.titulolibro = titulolibro;
     }
 
-    public String getTituloLibro() {
-        return tituloLibro;
+    public Integer getIdgenero() {
+        return idgenero;
     }
 
-    public void setTituloLibro(String tituloLibro) {
-        this.tituloLibro = tituloLibro;
+    public void setIdgenero(Integer idgenero) {
+        this.idgenero = idgenero;
     }
 }

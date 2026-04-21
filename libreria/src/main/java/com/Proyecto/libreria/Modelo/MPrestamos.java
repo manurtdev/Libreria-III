@@ -11,66 +11,71 @@ import java.time.LocalDateTime;
 @Table(name="Prestamos")
 public class MPrestamos {
     @Id
-    @Column(name="idPrestamo", length = 15, nullable = false)
-    Integer idPrestamo;
-    @Column(name = "idUsuario",length = 20,nullable = false)
-    Integer idUsuario;
-    @Column(name = "fechaPrestamo",length = 20,nullable = false)
-    LocalDateTime fechaPrestamo;
-    @Column(name = "fechaDevolucionEsperada",length = 20,nullable = false)
-    LocalDateTime fechaDevolucionEsperada;
-    @Column(name = "estadoPrestamo",length = 20,nullable = false)
-    String estadoPrestamo;
+    @Column(name="idprestamo", length = 15, nullable = false)
+    Integer idprestamo;
+    @Column(name = "idusuario",length = 20,nullable = false)
+    Integer idusuario;
+    @Column(name = "fechaprestamo",length = 20,nullable = false)
+    LocalDateTime fechaprestamo;
+    @Column(name = "fechadevolucionesperada",length = 20,nullable = false)
+    LocalDateTime fechadevolucionesperada;
+    @Column(name = "estadoprestamo",length = 20,nullable = false)
+    String estadoprestamo;
+
+    //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
+
 
     //Constructores
     MPrestamos(){}
 
-    public MPrestamos(String estadoPrestamo, LocalDateTime fechaDevolucionEsperada, LocalDateTime fechaPrestamo, Integer idPrestamo, Integer idUsuario) {
-        this.estadoPrestamo = estadoPrestamo;
-        this.fechaDevolucionEsperada = fechaDevolucionEsperada;
-        this.fechaPrestamo = fechaPrestamo;
-        this.idPrestamo = idPrestamo;
-        this.idUsuario = idUsuario;
+    public MPrestamos(Integer idprestamo, Integer idusuario, LocalDateTime fechaprestamo, LocalDateTime fechaDevolucionEsperada, String estadoPrestamo) {
+        this.idprestamo = idprestamo;
+        this.idusuario = idusuario;
+        this.fechaprestamo = fechaprestamo;
+        this.fechadevolucionesperada = fechaDevolucionEsperada;
+        this.estadoprestamo = estadoPrestamo;
     }
 
     //Encapsulamiento
-    public String getEstadoPrestamo() {
-        return estadoPrestamo;
+    public Integer getIdprestamo() {
+        return idprestamo;
     }
 
-    public void setEstadoPrestamo(String estadoPrestamo) {
-        this.estadoPrestamo = estadoPrestamo;
+    public void setIdprestamo(Integer idprestamo) {
+        this.idprestamo = idprestamo;
     }
 
-    public LocalDateTime getFechaDevolucionEsperada() {
-        return fechaDevolucionEsperada;
+    public Integer getIdusuario() {
+        return idusuario;
     }
 
-    public void setFechaDevolucionEsperada(LocalDateTime fechaDevolucionEsperada) {
-        this.fechaDevolucionEsperada = fechaDevolucionEsperada;
+    public void setIdusuario(Integer idusuario) {
+        this.idusuario = idusuario;
     }
 
-    public LocalDateTime getFechaPrestamo() {
-        return fechaPrestamo;
+    public LocalDateTime getFechaprestamo() {
+        return fechaprestamo;
     }
 
-    public void setFechaPrestamo(LocalDateTime fechaPrestamo) {
-        this.fechaPrestamo = fechaPrestamo;
+    public void setFechaprestamo(LocalDateTime fechaprestamo) {
+        this.fechaprestamo = fechaprestamo;
     }
 
-    public Integer getIdPrestamo() {
-        return idPrestamo;
+    public LocalDateTime getFechadevolucionesperada() {
+        return fechadevolucionesperada;
     }
 
-    public void setIdPrestamo(Integer idPrestamo) {
-        this.idPrestamo = idPrestamo;
+    public void setFechadevolucionesperada(LocalDateTime fechadevolucionesperada) {
+        this.fechadevolucionesperada = fechadevolucionesperada;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public String getEstadoprestamo() {
+        return estadoprestamo;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setEstadoprestamo(String estadoprestamo) {
+        this.estadoprestamo = estadoprestamo;
     }
 }

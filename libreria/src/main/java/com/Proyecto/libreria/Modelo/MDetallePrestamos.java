@@ -11,56 +11,58 @@ import java.time.LocalDateTime;
 @Table(name="DetallePrestamos")
 public class MDetallePrestamos {
     @Id
-    @Column(name="idDetalle", length = 15, nullable = false)
-    Integer idDetalle;
-    @Column(name="idPrestamo", length = 15, nullable = false)
-    Integer idPrestamo;
-    @Column(name="idEjemplares", length = 15, nullable = false)
-    Integer idEjemplares;
-    @Column(name = "fechaDevolucionReal",length = 20,nullable = false)
-    LocalDateTime fechaDevolucionReal;
+    @Column(name="iddetalle", length = 15, nullable = false)
+    Integer iddetalle;
+    @Column(name="idprestamo", length = 15, nullable = false)
+    Integer idprestamo;
+    @Column(name="idejemplar", length = 15, nullable = false)
+    Integer idejemplar;
+    @Column(name = "fechadevolucionreal",length = 20,nullable = false)
+    LocalDateTime fechadevolucionreal;
+
+    //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
 
     //Constructores
     MDetallePrestamos(){}
-
-    public MDetallePrestamos(LocalDateTime fechaDevolucionReal, Integer idDetalle, Integer idEjemplares, Integer idPrestamo) {
-        this.fechaDevolucionReal = fechaDevolucionReal;
-        this.idDetalle = idDetalle;
-        this.idEjemplares = idEjemplares;
-        this.idPrestamo = idPrestamo;
+    public MDetallePrestamos(Integer iddetalle, Integer idprestamo, Integer idejemplar, LocalDateTime fechadevolucionreal) {
+        this.iddetalle = iddetalle;
+        this.idprestamo = idprestamo;
+        this.idejemplar = idejemplar;
+        this.fechadevolucionreal = fechadevolucionreal;
     }
-
 
     //Encapsulamiento
-    public LocalDateTime getFechaDevolucionReal() {
-        return fechaDevolucionReal;
+    public Integer getIddetalle() {
+        return iddetalle;
     }
 
-    public void setFechaDevolucionReal(LocalDateTime fechaDevolucionReal) {
-        this.fechaDevolucionReal = fechaDevolucionReal;
+    public void setIddetalle(Integer iddetalle) {
+        this.iddetalle = iddetalle;
     }
 
-    public Integer getIdDetalle() {
-        return idDetalle;
+    public Integer getIdprestamo() {
+        return idprestamo;
     }
 
-    public void setIdDetalle(Integer idDetalle) {
-        this.idDetalle = idDetalle;
+    public void setIdprestamo(Integer idprestamo) {
+        this.idprestamo = idprestamo;
     }
 
-    public Integer getIdEjemplares() {
-        return idEjemplares;
+    public Integer getIdejemplar() {
+        return idejemplar;
     }
 
-    public void setIdEjemplares(Integer idEjemplares) {
-        this.idEjemplares = idEjemplares;
+    public void setIdejemplar(Integer idejemplar) {
+        this.idejemplar = idejemplar;
     }
 
-    public Integer getIdPrestamo() {
-        return idPrestamo;
+    public LocalDateTime getFechadevolucionreal() {
+        return fechadevolucionreal;
     }
 
-    public void setIdPrestamo(Integer idPrestamo) {
-        this.idPrestamo = idPrestamo;
+    public void setFechadevolucionreal(LocalDateTime fechadevolucionreal) {
+        this.fechadevolucionreal = fechadevolucionreal;
     }
 }

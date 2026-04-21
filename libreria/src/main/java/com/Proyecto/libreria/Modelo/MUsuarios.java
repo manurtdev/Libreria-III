@@ -9,56 +9,59 @@ import jakarta.persistence.Table;
 @Table(name="Usuarios")
 public class MUsuarios {
     @Id
-    @Column(name = "idUsuario",length = 20,nullable = false)
-    Integer idUsuario;
-    @Column(name = "nombreUsuario",length = 20,nullable = false)
-    String nombreUsuario;
-    @Column(name = "telUsuario",length = 20,nullable = false)
-    String telUsuario;
-    @Column(name = "emailUsuario",length = 50,nullable = false)
-    String emailUsuario;
+    @Column(name = "idusuario",length = 20,nullable = false)
+    Integer idusuario;
+    @Column(name = "nombreusuario",length = 20,nullable = false)
+    String nombreusuario;
+    @Column(name = "telusuario",length = 20,nullable = false)
+    String telusuario;
+    @Column(name = "emailusuario",length = 50,nullable = false)
+    String emailusuario;
+
+    //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 
 
     //Constructores
     MUsuarios(){}
 
-    public MUsuarios(Integer idUsuario, String nombreUsuario, String telUsuario, String emailUsuario) {
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
-        this.telUsuario = telUsuario;
-        this.emailUsuario = emailUsuario;
+    public MUsuarios(Integer idusuario, String nombreusuario, String telusuario, String emailusuario) {
+        this.idusuario = idusuario;
+        this.nombreusuario = nombreusuario;
+        this.telusuario = telusuario;
+        this.emailusuario = emailusuario;
     }
 
     //Encapsulamiento
-    public Integer getIdUsuario() {
-        return idUsuario;
+
+    public Integer getIdusuario() {
+        return idusuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdusuario(Integer idusuario) {
+        this.idusuario = idusuario;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getNombreusuario() {
+        return nombreusuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setNombreusuario(String nombreusuario) {
+        this.nombreusuario = nombreusuario;
     }
 
-    public String getTelUsuario() {
-        return telUsuario;
+    public String getTelusuario() {
+        return telusuario;
     }
 
-    public void setTelUsuario(String telUsuario) {
-        this.telUsuario = telUsuario;
+    public void setTelusuario(String telusuario) {
+        this.telusuario = telusuario;
     }
 
-    public String getEmailUsuario() {
-        return emailUsuario;
+    public String getEmailusuario() {
+        return emailusuario;
     }
 
-    public void setEmailUsuario(String emailUsuario) {
-        this.emailUsuario = emailUsuario;
+    public void setEmailusuario(String emailusuario) {
+        this.emailusuario = emailusuario;
     }
 }
