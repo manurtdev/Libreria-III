@@ -3,26 +3,32 @@ package com.Proyecto.libreria.Controlador;
 import com.Proyecto.libreria.Modelo.MGeneros;
 import com.Proyecto.libreria.Servicios.SGeneros;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/generos")
 @CrossOrigin(origins = "*")
 public class CGeneros {
-
     @Autowired
-    private SGeneros servicio;
+    SGeneros sGeneros;
 
-    @GetMapping("/listar")
-    public List<MGeneros> listar() {
-        return servicio.listarTodos();
+    @PostMapping
+    public ResponseEntity<?> adicionarGenero(@RequestBody MGeneros mGeneros) {
+        try {
+            return ResponseEntity.status(HttpStatus.CREATED).body(this.sGeneros.adicionarGenero(mGeneros));
+        } catch (Exception error) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error.getMessage());
+        }
     }
 
-    @PostMapping("/guardar")
-    public String guardar(@RequestBody MGeneros genero) {
-        servicio.guardar(genero);
-        return "Género guardado correctamente";
+    @GetMapping
+    public ResponseEntity<?> consultaGeneros() {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(this.sGeneros.consultaGeneros());
+        } catch (Exception error) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error.getMessage());
+        }
     }
 }
