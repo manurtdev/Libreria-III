@@ -21,7 +21,7 @@ public class MUsuarios {
     //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
     @OneToMany(mappedBy = "mUsuarios")
     @JsonManagedReference
-    List<MUsuarios>
+    List<MPrestamos> mPrestamos;
 
 
     //Constructores

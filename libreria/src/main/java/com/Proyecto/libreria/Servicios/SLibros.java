@@ -28,7 +28,7 @@ public class SLibros {
     }
 
     //Consulta de todos los registros de libros
-    public List<MLibros>consultaGeneralLibros(Integer idlibro) throws Exception{
+    public List<MLibros>consultaGeneralLibros() throws Exception{
         try {
             return iLibros.findAll();
         }catch (Exception error){

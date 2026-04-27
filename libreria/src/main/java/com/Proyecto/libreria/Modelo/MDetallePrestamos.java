@@ -1,9 +1,7 @@
 package com.Proyecto.libreria.Modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -21,7 +19,15 @@ public class MDetallePrestamos {
     LocalDateTime fechadevolucionreal;
 
     //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+@ManyToOne
+@JoinColumn(name = "pkdetalleprestamos", referencedColumnName = "idejemplar")
+@JsonManagedReference
+MEjemplares mEjemplares;
 
+@ManyToOne
+@JoinColumn(name = "pkdetalleprestamos", referencedColumnName = "idprestamo")
+@JsonManagedReference
+MPrestamos mPrestamos;
 
 
     //Constructores

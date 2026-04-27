@@ -1,11 +1,10 @@
 package com.Proyecto.libreria.Modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="Prestamos")
@@ -23,8 +22,14 @@ public class MPrestamos {
     String estadoprestamo;
 
     //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+@ManyToOne
+@JoinColumn(name = "pkprestamo", referencedColumnName = "idusuario")
+@JsonManagedReference
+MUsuarios mUsuarios;
 
-
+@OneToMany(mappedBy = "mPrestamos")
+@JsonManagedReference
+List<MDetallePrestamos> mDetallePrestamos;
 
 
     //Constructores
