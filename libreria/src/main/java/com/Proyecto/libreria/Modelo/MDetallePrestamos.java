@@ -1,6 +1,6 @@
 package com.Proyecto.libreria.Modelo;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -18,16 +18,16 @@ public class MDetallePrestamos {
     @Column(name = "fechadevolucionreal",length = 20,nullable = false)
     LocalDateTime fechadevolucionreal;
 
-    //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-@ManyToOne
-@JoinColumn(name = "pkdetalleprestamos", referencedColumnName = "idejemplar")
-@JsonManagedReference
-MEjemplares mEjemplares;
+    //RELACIONES CORREGIDAS
+    @ManyToOne
+    @JoinColumn(name = "idejemplar", referencedColumnName = "idejemplar", insertable = false, updatable = false)
+    @JsonBackReference
+    MEjemplares mEjemplares;
 
-@ManyToOne
-@JoinColumn(name = "pkdetalleprestamos", referencedColumnName = "idprestamo")
-@JsonManagedReference
-MPrestamos mPrestamos;
+    @ManyToOne
+    @JoinColumn(name = "idprestamo", referencedColumnName = "idprestamo", insertable = false, updatable = false)
+    @JsonBackReference
+    MPrestamos mPrestamos;
 
 
     //Constructores

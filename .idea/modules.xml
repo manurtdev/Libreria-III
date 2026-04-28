@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/API backend II.iml" filepath="$PROJECT_DIR$/.idea/API backend II.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libreria/libreria.iml" filepath="$PROJECT_DIR$/libreria/libreria.iml" />
     </modules>
   </component>
 </project>
