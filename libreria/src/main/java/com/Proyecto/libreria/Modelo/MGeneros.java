@@ -14,7 +14,7 @@ public class MGeneros {
     String nombregenero;
 
     @OneToMany(mappedBy = "mGeneros")
-    @JsonManagedReference
+    @JsonManagedReference(value = "genero-libros")
     List<MLibros> mLibros;
 
     MGeneros(){}

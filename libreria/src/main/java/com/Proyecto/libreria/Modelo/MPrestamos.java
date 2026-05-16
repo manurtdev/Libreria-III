@@ -1,5 +1,6 @@
 package com.Proyecto.libreria.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -23,12 +24,12 @@ public class MPrestamos {
 
     //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 @ManyToOne
-@JoinColumn(name = "pkprestamo", referencedColumnName = "idusuario")
-@JsonManagedReference
+@JoinColumn(name = "idusuario", referencedColumnName = "idusuario", insertable = false, updatable = false)
+@JsonBackReference(value = "usuario-prestamos")
 MUsuarios mUsuarios;
 
 @OneToMany(mappedBy = "mPrestamos")
-@JsonManagedReference
+@JsonManagedReference(value = "prestamo-detalles")
 List<MDetallePrestamos> mDetallePrestamos;
 
 

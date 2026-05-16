@@ -21,12 +21,12 @@ public class MDetallePrestamos {
     //RELACIONES CORREGIDAS
     @ManyToOne
     @JoinColumn(name = "idejemplar", referencedColumnName = "idejemplar", insertable = false, updatable = false)
-    @JsonBackReference
+    @JsonBackReference(value = "ejemplar-detalles")
     MEjemplares mEjemplares;
 
     @ManyToOne
     @JoinColumn(name = "idprestamo", referencedColumnName = "idprestamo", insertable = false, updatable = false)
-    @JsonBackReference
+    @JsonBackReference(value = "prestamo-detalles")
     MPrestamos mPrestamos;
 
 

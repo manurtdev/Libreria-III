@@ -20,7 +20,7 @@ public class MUsuarios {
 
     //RELACIONES AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
     @OneToMany(mappedBy = "mUsuarios")
-    @JsonManagedReference
+    @JsonManagedReference(value = "usuario-prestamos")
     List<MPrestamos> mPrestamos;
 
 

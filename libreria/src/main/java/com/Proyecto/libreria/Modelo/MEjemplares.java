@@ -18,11 +18,11 @@ public class MEjemplares {
 
     @ManyToOne
     @JoinColumn(name = "idlibro", referencedColumnName = "idlibro", insertable = false, updatable = false)
-    @JsonBackReference
+    @JsonBackReference(value = "libro-ejemplares")
     MLibros mLibros;
 
     @OneToMany(mappedBy = "mEjemplares")
-    @JsonManagedReference
+    @JsonManagedReference(value = "ejemplar-detalles")
     List<MDetallePrestamos> mDetallePrestamos;
 
     MEjemplares(){}
